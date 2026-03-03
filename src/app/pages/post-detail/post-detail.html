@@ -1,0 +1,11 @@
+@if (isLoading) {
+  <h3>Carregando conteudo...</h3>
+}
+@else if (errorMessage) {
+  <h3>{{errorMessage}}</h3>
+}
+@else if (post) {
+  <h1>{{post.title}}</h1>
+  <h5>{{post.createdDate}}</h5>
+  <h2>{{post.description}}</h2>
+}
