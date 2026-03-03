@@ -1,0 +1,22 @@
+main{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+li::marker{
+  color: var(--text);
+}
+
+.title{
+  color: var(--text);
+}
+
+.post{
+  font-size: larger;
+}
+
+a:visited {
+  color: rgb(7, 148, 241);
+}

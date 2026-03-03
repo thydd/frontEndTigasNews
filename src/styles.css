@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #0f0f0f;
+  --primary-010: #2c2c2c;
+  --surface: #0f0f0f;
+  --text: #e9ecf1;
+  --text-grey: #797b7e;
+  --primary-font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font);
+  background: var(--surface);
+}
+

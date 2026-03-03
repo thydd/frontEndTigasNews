@@ -1,13 +1,19 @@
-@if (isLoading) {
-  <h3>Carregando posts...</h3>
-}
-@else if (errorMessage) {
-  <h3>{{errorMessage}}</h3>
-}
-@else {
-  <ul>
-  @for (post of posts; track post.postId) {
-      <li [routerLink]="['', post.postId]">{{post.title}}</li>
+<main>
+  <h1 class="title">TigasNews Blog</h1>
+
+  @if (isLoading) {
+    <h3>Carregando posts...</h3>
   }
-  </ul>
-}
+  @else if (errorMessage) {
+    <h3>{{errorMessage}}</h3>
+  }
+  @else {
+    <ul>
+    @for (post of posts; track post.postId) {
+        <li>
+          <a class="post" [routerLink]="['', post.postId]">{{post.title}}</a>
+        </li>
+    }
+    </ul>
+  }
+</main>

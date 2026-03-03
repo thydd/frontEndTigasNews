@@ -3,10 +3,11 @@ import { PostService } from '../../services/PostService';
 import { Post } from '../../models/post/post.model';
 import { finalize, timeout } from 'rxjs';
 import { RouterLink } from '@angular/router';
+import { Header } from '../../components/header/header';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink],
+  imports: [RouterLink, Header],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
