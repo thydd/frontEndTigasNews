@@ -1,17 +1,19 @@
-<main>
+<main class="container">
   <h1 class="title">TigasNews Blog</h1>
+
+  <h2 class="project-header">Projetos</h2>
 
   @if (isLoading) {
     <h3>Carregando posts...</h3>
   }
   @else if (errorMessage) {
-    <h3>{{errorMessage}}</h3>
+    <h3>{{errorMessage}}...</h3>
   }
   @else {
     <ul>
     @for (post of posts; track post.postId) {
         <li>
-          <a class="post" [routerLink]="['', post.postId]">{{post.title}}</a>
+          <a class="post" [routerLink]="['posts/', post.postId]">{{post.title}}</a>
         </li>
     }
     </ul>

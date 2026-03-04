@@ -1,0 +1,33 @@
+.post {
+  max-width: 720px;       
+  margin: 80px auto;       
+  padding: 0 20px;
+  font-family: Georgia, serif;         
+}
+
+h3{
+  color: var(--text);  
+}
+
+.title {
+  font-size: 42px;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.data{
+  color: var(--text-grey);
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.content p{
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  white-space: pre-line;
+  color: var(--text);
+}

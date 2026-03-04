@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { PostService } from '../../services/PostService';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../../models/post/post.model';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-post-detail',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './post-detail.html',
   styleUrl: './post-detail.css',
 })

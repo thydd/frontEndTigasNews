@@ -1,0 +1,14 @@
+<form [formGroup]="loginForm" class="container">
+  <h1>Login</h1>
+
+  <div class="input-container">
+    <input formControlName="username" placeholder="Username" type="text">
+  </div>
+  <div class="input-container"> 
+    <input formControlName="password" placeholder="Password" type="password">
+  </div>
+
+  <div class="button-container">
+    <button (submit)="sendLogin()" class="send-button" type="submit">OK</button>
+  </div>
+</form>
