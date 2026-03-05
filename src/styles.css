@@ -17,3 +17,16 @@ body {
   background: var(--surface);
 }
 
+.theme-menu .mat-mdc-menu-content {
+  background: #202225;
+}
+
+.theme-menu .mat-mdc-menu-item {
+  color: #f3f5f8;
+}
+
+.theme-menu .mat-mdc-menu-content .mat-mdc-menu-item:hover{
+  background: #3f3f3f;
+  color: #ffffff;
+}
+
