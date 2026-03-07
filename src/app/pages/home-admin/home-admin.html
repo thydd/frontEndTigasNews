@@ -6,9 +6,9 @@
   </button>
 
   <mat-menu #menu="matMenu" class="theme-menu">
-    <button mat-menu-item>Create</button>
-    <button mat-menu-item>Update</button>
-    <button mat-menu-item>Delete</button>
+    <button (click)="createPost()" mat-menu-item>Create</button>
+    <button (click)="updatePost()" mat-menu-item>Update</button>
+    <button (click)="deletePost()" mat-menu-item>Delete</button>
   </mat-menu>
 
   <h2 class="project-header">Projetos</h2>

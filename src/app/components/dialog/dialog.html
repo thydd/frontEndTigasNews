@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>{{data.title}}</h2>
+
+<mat-dialog-content>
+  <p>{{data.message}}</p>
+</mat-dialog-content>
+
+@if (getDialogType() === 'create' || getDialogType() === 'update') {
+  <form [formGroup]="dialogForm">
+    <input formControlName="id" type="text" placeholder="id"/>
+    <input formControlName="title" type="text" placeholder="title"/>
+    <input formControlName="description" type="text" placeholder="description"/>
+  </form>
+}
+@else {
+  <form [formGroup]="dialogForm">
+    <input formControlName="id" type="text" placeholder="id"/>
+  </form>
+}
+
+<mat-dialog-actions align="end">
+  <button matButton (click)="close(false)">
+    Cancel
+  </button>
+
+  <button mat-raised-button (click)="close(true)">
+    OK
+  </button>
+</mat-dialog-actions>
