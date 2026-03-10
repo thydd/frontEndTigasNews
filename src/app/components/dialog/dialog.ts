@@ -27,7 +27,6 @@ export class Dialog implements OnInit{
   buildForm(variant: DialogVariant){
     switch(variant){
       case 'createDialog':
-        this.dialogForm.addControl('id', new FormControl('', { nonNullable: true, validators: [Validators.required] }))
         this.dialogForm.addControl('title', new FormControl('', { nonNullable: true, validators: [Validators.required] }))
         this.dialogForm.addControl('description', new FormControl('', { nonNullable: true, validators: [Validators.required] }))
         break

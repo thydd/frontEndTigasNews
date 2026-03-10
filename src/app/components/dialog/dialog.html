@@ -1,28 +1,36 @@
-<h2 mat-dialog-title>{{data.title}}</h2>
+<main>
+  <h2 mat-dialog-title>{{data.title}}</h2>
 
-<mat-dialog-content>
-  <p>{{data.message}}</p>
-</mat-dialog-content>
+  <mat-dialog-content>
+    <p>{{data.message}}</p>
+  </mat-dialog-content>
 
-@if (getDialogType() === 'create' || getDialogType() === 'update') {
-  <form [formGroup]="dialogForm">
-    <input formControlName="id" type="text" placeholder="id"/>
-    <input formControlName="title" type="text" placeholder="title"/>
-    <input formControlName="description" type="text" placeholder="description"/>
-  </form>
-}
-@else {
-  <form [formGroup]="dialogForm">
-    <input formControlName="id" type="text" placeholder="id"/>
-  </form>
-}
+  @if (getDialogType() === 'create') {
+    <form [formGroup]="dialogForm">
+      <input class="inputTitle" formControlName="title" type="text" placeholder="title"/>
+      <input class="inputDescription" formControlName="description" type="text" placeholder="description"/>
+    </form>
+  }
+  @else if (getDialogType() === 'update') {
+    <form [formGroup]="dialogForm">
+      <input class="inputId" formControlName="id" type="text" placeholder="id"/>
+      <input class="inputTitle" formControlName="title" type="text" placeholder="title"/>
+      <input class="inputDescription" formControlName="description" type="text" placeholder="description"/>
+    </form>
+  }
+  @else {
+    <form [formGroup]="dialogForm">
+      <input class="inputId" formControlName="id" type="text" placeholder="id"/>
+    </form>
+  }
 
-<mat-dialog-actions align="end">
-  <button matButton (click)="close(false)">
-    Cancel
-  </button>
+  <mat-dialog-actions align="end">
+    <button matButton (click)="close(false)">
+      Cancel
+    </button>
 
-  <button mat-raised-button (click)="close(true)">
-    OK
-  </button>
-</mat-dialog-actions>
+    <button mat-raised-button (click)="close(true)">
+      OK
+    </button>
+  </mat-dialog-actions>
+</main>

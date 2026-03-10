@@ -1,0 +1,22 @@
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputDescription{
+  width: 200px;
+  height: 200px;
+}
+
+p{
+  padding-bottom: 10px;
+  color:crimson;
+}

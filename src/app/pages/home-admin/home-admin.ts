@@ -4,8 +4,10 @@ import { Post } from '../../models/post/post.model';
 import { finalize, timeout } from 'rxjs';
 import { RouterLink } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { Dialog } from '../../components/dialog/dialog';
+import { IDialog } from '../../models/dialog/IDialog.interface';
 
 @Component({
   selector: 'app-home-admin',
@@ -15,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class HomeAdmin implements OnInit{
   private readonly _postService = inject(PostService)
+  private readonly _dialog = inject(MatDialog)
   posts: Post[] = []
   isLoading = false
   errorMessage = ''
@@ -31,15 +34,55 @@ export class HomeAdmin implements OnInit{
   }
 
   createPost(){
-    
+    const dialogRef = this._dialog.open(Dialog, {
+      data: {
+        variant: 'createDialog',
+        title: 'Criar Post',
+      } as IDialog
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (!result) return;
+      this._postService.createPost(result).subscribe({
+        next: () => this.loadPosts(),
+        error: () => this.errorMessage = 'Error ao criar post'
+      })
+    })
   }
 
   updatePost(){
+    const dialogRef = this._dialog.open(Dialog, {
+      data: {
+        variant: 'updateDialog',
+        title: 'Atualizar Post',
+      } as IDialog
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (!result) return;
+      this._postService.updatePost(result).subscribe({
+        next: () => this.loadPosts(),
+        error: () => this.errorMessage = 'Error ao atualizar o post'
+      })
+    })
   }
 
   deletePost(){
+    const dialogRef = this._dialog.open(Dialog, {
+      data: {
+        variant: 'deleteDialog',
+        title: 'Deletar Post',
+        message: 'Informe o ID do post a ser deletado.'
+      } as IDialog
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (!result) return;
+      this._postService.deletePost(result.id).subscribe({
+        next: () => this.loadPosts(),
+        error: () => this.errorMessage = 'Error ao deletar post'
+      })
+    })
   }
 
   ngOnInit(){
