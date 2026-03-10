@@ -17,6 +17,18 @@ body {
   background: var(--surface);
 }
 
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background: var(--primary-010) !important;
+  color: var(--text);
+}
+
+.mat-mdc-dialog-container .mat-mdc-dialog-title {
+  color: var(--text) !important;
+  font-family: var(--primary-font) !important;
+  font-weight: bold !important;
+}
+
+
 .theme-menu .mat-mdc-menu-content {
   background: #202225;
 }

@@ -35,6 +35,8 @@ export class HomeAdmin implements OnInit{
 
   createPost(){
     const dialogRef = this._dialog.open(Dialog, {
+      width: '600px',
+      height: '500px',
       data: {
         variant: 'createDialog',
         title: 'Criar Post',
@@ -52,6 +54,8 @@ export class HomeAdmin implements OnInit{
 
   updatePost(){
     const dialogRef = this._dialog.open(Dialog, {
+      width: '600px',
+      height: '500px',
       data: {
         variant: 'updateDialog',
         title: 'Atualizar Post',
@@ -69,6 +73,8 @@ export class HomeAdmin implements OnInit{
 
   deletePost(){
     const dialogRef = this._dialog.open(Dialog, {
+      width: '400px',
+      height: '200px',
       data: {
         variant: 'deleteDialog',
         title: 'Deletar Post',

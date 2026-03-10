@@ -8,14 +8,14 @@
   @if (getDialogType() === 'create') {
     <form [formGroup]="dialogForm">
       <input class="inputTitle" formControlName="title" type="text" placeholder="title"/>
-      <input class="inputDescription" formControlName="description" type="text" placeholder="description"/>
+      <textarea class="inputDescription" formControlName="description" placeholder="description"></textarea>
     </form>
   }
   @else if (getDialogType() === 'update') {
     <form [formGroup]="dialogForm">
       <input class="inputId" formControlName="id" type="text" placeholder="id"/>
       <input class="inputTitle" formControlName="title" type="text" placeholder="title"/>
-      <input class="inputDescription" formControlName="description" type="text" placeholder="description"/>
+      <textarea class="inputDescription" formControlName="description" placeholder="description"></textarea>
     </form>
   }
   @else {
